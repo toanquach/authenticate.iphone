@@ -164,11 +164,14 @@ static JRAuthenticate* singletonJRAuth = nil;
 
 - (void)startGetBaseUrl
 {
-	
-#if LOCAL // TODO: Change this to use stringWithFormat instead
-	NSString *urlString = [[@"http://lillialexis.janrain.com:8080/jsapi/v3/base_url?appId=" 
-							stringByAppendingString:@"dgnclgmgpcjmdebbhkhf"]
-						   stringByAppendingString:@"&skipXdReceiver=true"];
+//#define LOCAL	
+#ifdef LOCAL // TODO: Change this to use stringWithFormat instead
+	NSString *urlString = [NSString stringWithFormat:
+                           @"http://rpxstaging.com/jsapi/v3/baseurl?appId=%@&skipXdReceiver=true", 
+                           @"kcemlogaanidnljknmbj"];
+    //	NSString *urlString = [[@"http://lillialexis.janrain.com:8080/jsapi/v3/base_url?appId=" 
+//							stringByAppendingString:@"dgnclgmgpcjmdebbhkhf"]
+//						   stringByAppendingString:@"&skipXdReceiver=true"];
 #else
 	NSString *urlString = [[@"http://rpxnow.com/jsapi/v3/base_url?appId=" 
 							stringByAppendingString:theAppId]

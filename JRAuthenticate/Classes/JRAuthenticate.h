@@ -40,8 +40,6 @@
 #import "JRWebViewController.h"
 #import "JRSessionData.h"
 
-#define LOCAL 0
-
 @protocol JRAuthenticateDelegate <NSObject>
 @optional
 /**
